@@ -1,11 +1,23 @@
 <h1>Fruit</h1>
-<ul>
-  <li *ngFor="let fruit of fruits">{{ fruit.name }}</li>
-</ul>
-<input [(ngModel)]="newFruit.name" placeholder="name" /><button
-  (click)="addFruit()"
->
-  Submit
-</button>
 
+<form (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="newFruit.name" placeholder="name" name="name" />
+  <input
+    id="image"
+    type="file"
+    accept="image/*"
+    (change)="onFileChanged($event)"
+    name="image"
+    #fileInput
+  />
+  <button type="submit">
+    Submit
+  </button>
+</form>
+<ul>
+  <li *ngFor="let fruit of fruits">
+    {{ fruit.name }}
+    <img src="{{ fruit.image }}" width="400" />
+  </li>
+</ul>
 <router-outlet></router-outlet>

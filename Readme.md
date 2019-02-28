@@ -1,4 +1,4 @@
-### SEAN
+### SEAN File Upload
 
 > **S**qlite **E**xpress **A**ngular **N**ode
 
@@ -6,7 +6,7 @@
 
 ```
 cd desktop
-git clone https://github.com/ammonk/sean-starter.git
+git clone https://github.com/ammonk/sean-fileupload.git
 ```
 
 ### How to run

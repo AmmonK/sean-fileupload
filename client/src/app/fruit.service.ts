@@ -17,6 +17,9 @@ export class FruitService {
   }
 
   addFruit(newFruit: Fruit): Observable<Fruit> {
-    return this.http.post<Fruit>(this.url, newFruit);
+    const formData = new FormData();
+    formData.append("image", newFruit.image);
+    formData.append("name", newFruit.name);
+    return this.http.post<Fruit>(this.url, formData);
   }
 }
